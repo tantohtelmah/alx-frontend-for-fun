@@ -4,6 +4,7 @@ Mark Down
 """
 
 
+import re
 import sys
 import os
 
@@ -17,9 +18,16 @@ def convert_markdown_to_html(markdown_file, output_file):
         print(f"Missing {markdown_file}", file=sys.stderr)
         sys.exit(1)
 
-    # Your conversion logic goes here (e.g., using a Markdown library or regex)
+    # Read the Markdown content from the input file
+    with open(markdown_file, "r") as md_file:
+        markdown_content = md_file.read()
 
-    # If everything is successful:
+    # Convert Markdown headings to HTML
+    html_content = re.sub(r"(#+)\s+(.*)", r"<\1>\2</\1>", markdown_content)
+
+    # Write the HTML content to the output file
+    with open(output_file, "w") as html_file:
+        html_file.write(html_content)
     sys.exit(0)
 
 if __name__ == "__main__":
