@@ -1,0 +1,31 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.image-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon {
+    width: 100px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    background-image: url('html.png');
+	background-color: red;
+    background-size: 300px 100px; /* Adjust based on the full image size */
+}
+
+.i-html {
+    background-position: 0 0;
+}
+
+.i-css {
+    background-position: -100px 0;
+}
+
+.i-js {
+    background-position: -200px 0;
+}

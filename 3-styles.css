@@ -1,0 +1,118 @@
+/* 3-styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.menu {
+    position: relative;
+}
+
+.menu-open-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100px;
+    height: 100px;
+    background: #c60606;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-open-button .menu-line {
+    width: 20px;
+    height: 2px;
+    background: #333;
+    transition: transform 0.3s ease;
+}
+
+.menu-open-button .menu-line-1 {
+    transform-origin: top left;
+}
+
+.menu-open-button .menu-line-2 {
+    opacity: 1;
+}
+
+.menu-open-button .menu-line-3 {
+    transform-origin: bottom left;
+}
+
+.menu-open:checked + .menu-open-button {
+    transform: rotate(45deg);
+}
+
+.menu-open:checked + .menu-open-button .menu-line-1 {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-open:checked + .menu-open-button .menu-line-2 {
+    opacity: 0;
+}
+
+.menu-open:checked + .menu-open-button .menu-line-3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.menu-item {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 10px 0;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    text-align: center;
+    line-height: 40px;
+    color: #333;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+}
+
+.menu-open:checked ~ .menu-item {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.menu-item:nth-child(3) {
+    transform: translate(-50%, -150%) scale(0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(3) {
+    transform: translate(-50%, -150%) scale(1);
+}
+
+.menu-item:nth-child(4) {
+    transform: translate(-50%, -250%) scale(0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(4) {
+    transform: translate(-50%, -250%) scale(1);
+}
+
+.menu-item:nth-child(5) {
+    transform: translate(-50%, -350%) scale(0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(5) {
+    transform: translate(-50%, -350%) scale(1);
+}
+
+.menu-item:nth-child(6) {
+    transform: translate(-50%, -450%) scale(0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(6) {
+    transform: translate(-50%, -450%) scale(1);
+}
