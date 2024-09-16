@@ -1,0 +1,13 @@
+$list_to_sort: 5, 3, 8, 1, 2;
+
+@function sort-list($list) {
+  $sorted-list: ();
+  @each $item in $list {
+    $sorted-list: append($sorted-list, $item);
+  }
+  @return sort($sorted-list);
+}
+
+$sorted_list: sort-list($list_to_sort);
+
+@debug $sorted_list;
